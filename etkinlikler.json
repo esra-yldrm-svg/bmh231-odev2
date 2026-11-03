@@ -1,0 +1,8 @@
+[
+ {"id":1,"baslik":"Web Programlama Atölyesi","tur":"atolye","tarih":"2026-11-10","yer":"Mühendislik Laboratuvarı","kontenjan":30},
+ {"id":2,"baslik":"Yazılım Topluluğu Tanışması","tur":"topluluk","tarih":"2026-11-12","yer":"Konferans Salonu","kontenjan":120},
+ {"id":3,"baslik":"Yapay Zekâ Söyleşisi","tur":"soylesi","tarih":"2026-11-14","yer":"Merkez Amfi","kontenjan":200},
+ {"id":4,"baslik":"Git ve GitHub Atölyesi","tur":"atolye","tarih":"2026-11-17","yer":"Bilgisayar Laboratuvarı","kontenjan":25},
+ {"id":5,"baslik":"Siber Güvenlik Söyleşisi","tur":"soylesi","tarih":"2026-11-19","yer":"Mühendislik Amfisi","kontenjan":80},
+ {"id":6,"baslik":"Robotik Topluluğu Buluşması","tur":"topluluk","tarih":"2026-11-21","yer":"Teknoloji Atölyesi","kontenjan":45}
+]
