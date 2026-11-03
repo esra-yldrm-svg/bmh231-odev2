@@ -1,14 +1,14 @@
 
 # Kampüs Etkinlik Panosu
 
-BMH231 Ödev 2 kapsamında geliştirilmiş, kampüs etkinliklerini listeleyen ve etkinlik önerisi alınmasını sağlayan web uygulamasıdır.
+BMH231 Web Programlama Ödev 2 kapsamında geliştirilen, kampüs etkinliklerini listeleyen ve etkinlik önerisi alınmasını sağlayan web uygulamasıdır.
 
 ## Kullanılan Teknolojiler
 
 - HTML5 (Semantik HTML)
 - CSS3 (Grid, Flexbox, Responsive Tasarım)
-- JavaScript
-- Node.js
+- JavaScript (DOM, Fetch API, Async/Await)
+- Node.js (http, fs, path modülleri)
 - Git ve GitHub
 
 ## Proje Özellikleri
@@ -19,9 +19,15 @@ BMH231 Ödev 2 kapsamında geliştirilmiş, kampüs etkinliklerini listeleyen ve
 - Mobil cihazlara uyumlu tasarım
 - Etkinlik öneri formu
 - Form doğrulama ve kullanıcıya geri bildirim
-- REST API üzerinden etkinlik verilerini görüntüleme
+- API üzerinden etkinlik verilerini görüntüleme
+- API bağlantı hatalarında kullanıcıyı bilgilendirme
+- Klavye ile erişilebilir filtre butonları
 
 ## Kurulum
+
+Bilgisayarda Node.js ve Git kurulu olmalıdır.
+
+Projeyi indirmek için:
 
 ```bash
 git clone https://github.com/esra-yldrm-svg/bmh231-odev2.git
@@ -36,24 +42,53 @@ Tarayıcıdan http://localhost:3000 adresini açın.
 | Yöntem | Yol | Açıklama |
 |---|---|---|
 | GET | / | Ana sayfa |
-| GET | /api/etkinlikler | Tüm etkinlikler |
-| GET | /api/etkinlikler?tur=atolye | Etkinlik türüne göre filtreleme |
-| GET | /api/etkinlikler/3 | ID ile tek etkinlik |
+| GET | /api/etkinlikler | Tüm etkinlikleri listeler |
+| GET | /api/etkinlikler?tur=atolye | Atölye türündeki etkinlikleri listeler |
+| GET | /api/etkinlikler/2 | ID değeri 2 olan etkinliği getirir |
+| GET | /api/etkinlikler/999 | Etkinlik yoksa 404 döndürür |
+| DELETE | /api/etkinlikler/2 | İzin verilmeyen yöntem için 405 döndürür |
+
+## API Test Komutları
+
+```powershell
+curl.exe -i http://localhost:3000/api/etkinlikler?tur=atolye
+curl.exe -i http://localhost:3000/api/etkinlikler/2
+curl.exe -i http://localhost:3000/api/etkinlikler/999
+curl.exe -i -X DELETE http://localhost:3000/api/etkinlikler/2
+```
 
 ## Testler
 
-- Mobil görünüm kontrolü
+- Masaüstü ve mobil görünüm kontrolü
 - Lighthouse erişilebilirlik testi
 - API GET isteklerinin kontrolü
-- Form doğrulama testi
-- Ağ performansının incelenmesi
+- Geçersiz etkinlik ID'sinde 404 yanıtı
+- Desteklenmeyen HTTP yönteminde 405 yanıtı
+- Geçerli ve geçersiz e-posta ile form doğrulama
+- API bağlantı hatasının kontrolü
+- Network panelinden ağ performansının incelenmesi
+
+## Proje Dosyaları
+
+- `public/index.html`: Sayfanın HTML yapısı
+- `public/stil.css`: Tasarım ve mobil uyumluluk
+- `public/betik.js`: Etkinlik listeleme, filtreleme ve form kontrolleri
+- `sunucu.js`: Node.js HTTP sunucusu ve API
+- `etkinlikler.json`: Etkinlik verileri
+- `package.json`: Proje çalıştırma ayarları
 
 ## Geliştirici
 
-Esra Yıldırım
+**Ad Soyad:** Esra Yıldırım
 
-Yozgat Bozok Üniversitesi
+**Öğrenci Numarası:** 16008125057
 
-Bilgisayar Mühendisliği
+**Üniversite:** Yozgat Bozok Üniversitesi
 
-BMH231 - Ödev 2
+**Bölüm:** Bilgisayar Mühendisliği
+
+**Ders:** BMH231 Web Programlama
+
+**Ödev:** Ödev 2 - Kampüs Etkinlik Panosu
+
+**GitHub:** https://github.com/esra-yldrm-svg/bmh231-odev2
