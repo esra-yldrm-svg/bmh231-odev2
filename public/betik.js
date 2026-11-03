@@ -98,6 +98,12 @@ async function etkinlikleriYukle() {
         }
 
         etkinlikler = await response.json();
+
+        // Etkinlikleri tarihe göre eskiden yeniye sırala
+        etkinlikler.sort((a, b) =>
+            a.tarih.localeCompare(b.tarih)
+        );
+
         ciz();
 
     } catch (hata) {
