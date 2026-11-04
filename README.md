@@ -23,11 +23,11 @@ BMH231 Web Programlama Ödev 2 kapsamında geliştirilen, kampüs etkinliklerini
 - API bağlantı hatalarında kullanıcıyı bilgilendirme
 - Klavye ile erişilebilir filtre butonları
 
-## Kurulum
+## Kurulum ve Çalıştırma
 
 Bilgisayarda Node.js ve Git kurulu olmalıdır.
 
-Projeyi indirmek için:
+Projeyi indirmek ve çalıştırmak için:
 
 ```bash
 git clone https://github.com/esra-yldrm-svg/bmh231-odev2.git
@@ -50,8 +50,10 @@ Tarayıcıdan http://localhost:3000 adresini açın.
 
 ## API Test Komutları
 
+PowerShell terminalinde aşağıdaki komutlar kullanılabilir:
+
 ```powershell
-curl.exe -i http://localhost:3000/api/etkinlikler?tur=atolye
+curl.exe -i "http://localhost:3000/api/etkinlikler?tur=atolye"
 curl.exe -i http://localhost:3000/api/etkinlikler/2
 curl.exe -i http://localhost:3000/api/etkinlikler/999
 curl.exe -i -X DELETE http://localhost:3000/api/etkinlikler/2
@@ -76,6 +78,14 @@ curl.exe -i -X DELETE http://localhost:3000/api/etkinlikler/2
 - `sunucu.js`: Node.js HTTP sunucusu ve API
 - `etkinlikler.json`: Etkinlik verileri
 - `package.json`: Proje çalıştırma ayarları
+- `.gitignore`: Git tarafından izlenmeyecek dosyalar
+- `README.md`: Proje açıklamaları ve kullanım bilgileri
+
+## Proje Ekran Görüntüsü
+
+Kampüs Etkinlik Panosu uygulamasının masaüstü görünümü aşağıda yer almaktadır.
+
+![Kampüs Etkinlik Panosu](ekran-goruntusu.png)
 
 ## Geliştirici
 
