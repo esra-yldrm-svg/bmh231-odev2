@@ -23,6 +23,36 @@ BMH231 Web Programlama Ödev 2 kapsamında geliştirilen, kampüs etkinliklerini
 - API bağlantı hatalarında kullanıcıyı bilgilendirme
 - Klavye ile erişilebilir filtre butonları
 
+## Uygulamanın Kullanımı
+
+### Etkinlikleri Görüntüleme
+
+Ana sayfa açıldığında kampüs etkinlikleri API üzerinden alınarak kartlar halinde listelenir. Her kartta etkinliğin başlığı, türü, tarihi, yeri ve kontenjan bilgisi bulunur.
+
+### Etkinlik Arama
+
+"Etkinlik ara" kutusuna bir etkinlik başlığı yazıldığında sonuçlar otomatik olarak filtrelenir. Arama büyük ve küçük harf ayrımı yapılmadan gerçekleştirilir.
+
+### Tür Filtreleme
+
+Tümü, Atölye, Söyleşi ve Topluluk düğmeleri kullanılarak etkinlikler türlerine göre görüntülenebilir.
+
+Arama ve tür filtresi birlikte çalışır. Seçilen koşullara uygun etkinlik bulunmadığında kullanıcıya bilgilendirme mesajı gösterilir.
+
+### Etkinlik Önerme
+
+Sayfanın altındaki "Etkinlik Öner" formuna etkinlik adı, tarih ve e-posta adresi girilebilir.
+
+Form gönderildiğinde aşağıdaki kontroller gerçekleştirilir:
+
+- Etkinlik adı en az 5 karakter olmalıdır.
+- Etkinlik tarihi boş veya geçmiş bir tarih olamaz.
+- E-posta adresi geçerli biçimde olmalıdır.
+- Hatalı girişlerde kullanıcıya hata mesajı gösterilir.
+- Geçerli girişlerde teşekkür mesajı gösterilir.
+
+Form, önerileri sunucuya kaydetmez. Yalnızca istemci tarafında doğrulama ve geri bildirim sağlar.
+
 ## Kurulum ve Çalıştırma
 
 Bilgisayarda Node.js ve Git kurulu olmalıdır.
